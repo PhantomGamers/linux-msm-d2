@@ -4,10 +4,10 @@ prefix="3.4_kernel_mr1"
 device="d2vzw"
 filename="${prefix}_${device}_${date}.zip"
 
-make ARCH=arm CROSS_COMPILE=gcc/android-toolchain-eabi/bin/arm-linux-androideabi- mrproper
-make ARCH=arm CROSS_COMPILE=gcc/android-toolchain-eabi/bin/arm-linux-androideabi- cyanogen_d2vzw_defconfig -j6
-make ARCH=arm CROSS_COMPILE=gcc/android-toolchain-eabi/bin/arm-linux-androideabi- -j6
-find drivers -name "*.ko" | xargs gcc/android-toolchain-eabi/bin/arm-linux-androideabi-strip --strip-unneeded
+make ARCH=arm CROSS_COMPILE=gcc/arm-linux-androideabi-4.7/bin/arm-linux-androideabi- mrproper
+make ARCH=arm CROSS_COMPILE=gcc/arm-linux-androideabi-4.7/bin/arm-linux-androideabi- cyanogen_d2vzw_defconfig -j6
+make ARCH=arm CROSS_COMPILE=gcc/arm-linux-androideabi-4.7/bin/arm-linux-androideabi- -j6
+find drivers -name "*.ko" | xargs gcc/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-strip --strip-unneeded
 mkdir -p tmp/out/system/lib/modules
 if [ -d zip ]; then rm -r zip; fi
 mkdir zip
