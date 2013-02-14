@@ -1,8 +1,6 @@
 #!/bin/bash
 date=`date +%h-%d-%y`
-prefix="3.4_kernel_mr1"
-device="d2vzw"
-filename="${prefix}_${device}_${date}.zip"
+filename="d2vzw_3.4-caf_kernel-{$date}.zip"
 
 make ARCH=arm CROSS_COMPILE=gcc/arm-linux-androideabi-4.7/bin/arm-linux-androideabi- mrproper
 make ARCH=arm CROSS_COMPILE=gcc/arm-linux-androideabi-4.7/bin/arm-linux-androideabi- cyanogen_d2vzw_defconfig -j6
